@@ -1,6 +1,8 @@
 ---
 import { getLanguageFromURL } from '../../languages';
 import { SIDEBAR } from '../../config';
+import { Card } from "accessible-astro-components";
+const pages = await Astro.glob("../../pages/en/*.md");
 
 type Props = {
 	currentPage: string;
@@ -21,16 +23,13 @@ const sidebar = SIDEBAR[langCode];
 				<div class="nav-group">
 					<h2>{header}</h2>
 					<ul>
-						{children.map((child) => {
-							const url = "https://ltevidence.github.io/astro-training/" + child.link;
-							return (
-								<li class="nav-link">
-									<a href={url} aria-current={currentPageMatch === child.link ? 'page' : false}>
-										{child.text}
-									</a>
-								</li>
-							);
-						})}
+						{
+          pages.map((page) => (
+            <li>
+							<a class="sidebar-links" href={page.url}>{page.frontmatter.title}</a>
+            </li>
+          ))
+        }
 					</ul>
 				</div>
 			</li>

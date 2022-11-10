@@ -2,6 +2,7 @@
 title: Introduction
 description: Docs intro
 layout: ../../layouts/MainLayout.astro
+slug: "introduction"
 ---
 
 **Welcome to Astro!**

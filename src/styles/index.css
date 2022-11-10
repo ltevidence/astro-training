@@ -115,6 +115,11 @@ a {
 	gap: 0.5rem;
 }
 
+a.sidebar-links {
+	text-decoration: none;
+	line-height: 7.5vh;
+	color: var(--color-base-black);
+}
 article > section :is(ul, ol) > * + * {
 	margin-top: 0.75rem;
 }
